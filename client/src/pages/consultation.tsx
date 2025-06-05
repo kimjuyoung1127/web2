@@ -12,8 +12,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 
 const consultationSchema = z.object({
   ownerName: z.string().min(2, "이름을 입력해주세요"),
@@ -58,6 +56,7 @@ const petAges = [
 ];
 
 export default function Consultation() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<ConsultationFormData>({
@@ -76,29 +75,28 @@ export default function Consultation() {
     },
   });
 
-  const createConsultationMutation = useMutation({
-    mutationFn: async (data: ConsultationFormData) => {
-      const response = await apiRequest("POST", "/api/consultations", data);
-      return response.json();
-    },
-    onSuccess: (data) => {
+  const onSubmit = async (data: ConsultationFormData) => {
+    setIsSubmitting(true);
+    
+    // 실제 구현에서는 API 호출
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000)); // 시뮬레이션
+      
       toast({
         title: "상담 신청이 완료되었습니다!",
         description: "24시간 내에 담당자가 연락드리겠습니다.",
       });
+      
       form.reset();
-    },
-    onError: (error) => {
+    } catch (error) {
       toast({
         title: "오류가 발생했습니다",
         description: "다시 시도해주시거나 전화로 문의해주세요.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: ConsultationFormData) => {
-    createConsultationMutation.mutate(data);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,7 +118,24 @@ export default function Consultation() {
         </div>
       </header>
 
-
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-warm-orange to-orange-400 py-16">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <PawPrint className="w-16 h-16 text-white mx-auto mb-6" />
+            <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
+              상담 신청 & 예약
+            </h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              우리 아이에게 맞는 최적의 프로그램을 찾기 위한 전문 상담을 받아보세요
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Main Content */}
       <section className="py-16">
@@ -419,9 +434,9 @@ export default function Consultation() {
                         <Button
                           type="submit"
                           className="w-full bg-warm-orange hover:bg-warm-orange/90 text-white py-6 text-lg font-semibold"
-                          disabled={createConsultationMutation.isPending}
+                          disabled={isSubmitting}
                         >
-                          {createConsultationMutation.isPending ? "상담 신청 중..." : "상담 신청하기"}
+                          {isSubmitting ? "상담 신청 중..." : "상담 신청하기"}
                         </Button>
                       </motion.div>
                     </form>
