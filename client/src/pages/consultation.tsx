@@ -118,24 +118,7 @@ export default function Consultation() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-warm-orange to-orange-400 py-16">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <PawPrint className="w-16 h-16 text-white mx-auto mb-6" />
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
-              상담 신청 & 예약
-            </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              우리 아이에게 맞는 최적의 프로그램을 찾기 위한 전문 상담을 받아보세요
-            </p>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Main Content */}
       <section className="py-16">
