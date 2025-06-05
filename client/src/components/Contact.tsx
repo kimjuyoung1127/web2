@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export default function Contact() {
   return (
@@ -32,13 +33,15 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <motion.button 
-            className="bg-white text-warm-orange px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all shadow-xl"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            📞 전화 상담 신청
-          </motion.button>
+          <Link href="/consultation">
+            <motion.button 
+              className="bg-white text-warm-orange px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all shadow-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              📞 전화 상담 신청
+            </motion.button>
+          </Link>
           <motion.button 
             className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-warm-orange transition-all"
             whileHover={{ scale: 1.05 }}

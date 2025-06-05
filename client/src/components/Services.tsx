@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Zap, Scissors, Bed, Clock, Coffee, Users, Heart } from "lucide-react";
+import { Link } from "wouter";
 
 const services = [
   {
@@ -110,9 +111,11 @@ export default function Services() {
                       <div className="p-6 text-white w-full">
                         <h3 className="font-playfair text-xl font-bold mb-2">{service.title}</h3>
                         <p className="text-sm mb-4">{service.description}</p>
-                        <button className="bg-warm-orange px-4 py-2 rounded-full text-sm hover:bg-opacity-90 transition-all">
-                          자세히 보기
-                        </button>
+                        <Link href="/consultation">
+                          <button className="bg-warm-orange px-4 py-2 rounded-full text-sm hover:bg-opacity-90 transition-all">
+                            자세히 보기
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

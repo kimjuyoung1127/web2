@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { Link } from "wouter";
 
 const pricingPlans = [
   {
@@ -119,13 +120,15 @@ export default function Pricing() {
                 ))}
               </ul>
               
-              <button className={`w-full py-3 rounded-full font-semibold transition-all transform hover:scale-105 ${
-                plan.popular 
-                  ? 'bg-white text-warm-orange hover:bg-gray-100' 
-                  : `${plan.buttonColor} text-white hover:opacity-90`
-              }`}>
-                상담 신청
-              </button>
+              <Link href="/consultation">
+                <button className={`w-full py-3 rounded-full font-semibold transition-all transform hover:scale-105 ${
+                  plan.popular 
+                    ? 'bg-white text-warm-orange hover:bg-gray-100' 
+                    : `${plan.buttonColor} text-white hover:opacity-90`
+                }`}>
+                  상담 신청
+                </button>
+              </Link>
             </motion.div>
           ))}
         </div>
