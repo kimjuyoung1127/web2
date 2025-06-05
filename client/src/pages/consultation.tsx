@@ -12,6 +12,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 const consultationSchema = z.object({
   ownerName: z.string().min(2, "이름을 입력해주세요"),
@@ -56,7 +58,6 @@ const petAges = [
 ];
 
 export default function Consultation() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<ConsultationFormData>({
@@ -75,28 +76,29 @@ export default function Consultation() {
     },
   });
 
-  const onSubmit = async (data: ConsultationFormData) => {
-    setIsSubmitting(true);
-    
-    // 실제 구현에서는 API 호출
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000)); // 시뮬레이션
-      
+  const createConsultationMutation = useMutation({
+    mutationFn: async (data: ConsultationFormData) => {
+      const response = await apiRequest("POST", "/api/consultations", data);
+      return response.json();
+    },
+    onSuccess: (data) => {
       toast({
         title: "상담 신청이 완료되었습니다!",
         description: "24시간 내에 담당자가 연락드리겠습니다.",
       });
-      
       form.reset();
-    } catch (error) {
+    },
+    onError: (error) => {
       toast({
         title: "오류가 발생했습니다",
         description: "다시 시도해주시거나 전화로 문의해주세요.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
-    }
+    },
+  });
+
+  const onSubmit = (data: ConsultationFormData) => {
+    createConsultationMutation.mutate(data);
   };
 
   return (
@@ -417,9 +419,9 @@ export default function Consultation() {
                         <Button
                           type="submit"
                           className="w-full bg-warm-orange hover:bg-warm-orange/90 text-white py-6 text-lg font-semibold"
-                          disabled={isSubmitting}
+                          disabled={createConsultationMutation.isPending}
                         >
-                          {isSubmitting ? "상담 신청 중..." : "상담 신청하기"}
+                          {createConsultationMutation.isPending ? "상담 신청 중..." : "상담 신청하기"}
                         </Button>
                       </motion.div>
                     </form>
