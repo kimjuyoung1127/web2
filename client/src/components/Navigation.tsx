@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,9 +43,11 @@ export default function Navigation() {
           </div>
           
           {/* CTA Button */}
-          <button className="hidden md:block bg-warm-orange text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all transform hover:scale-105">
-            상담 신청
-          </button>
+          <Link href="/consultation">
+            <button className="hidden md:block bg-warm-orange text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all transform hover:scale-105">
+              상담 신청
+            </button>
+          </Link>
           
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -77,9 +80,11 @@ export default function Navigation() {
             <button onClick={() => scrollToSection('about')} className="block px-3 py-2 text-dark-gray hover:text-warm-orange transition-colors w-full text-left">
               소개
             </button>
-            <button className="w-full mt-4 bg-warm-orange text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all">
-              상담 신청
-            </button>
+            <Link href="/consultation">
+              <button className="w-full mt-4 bg-warm-orange text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all">
+                상담 신청
+              </button>
+            </Link>
           </div>
         </div>
       )}
