@@ -4,9 +4,9 @@ import { ChevronDown } from "lucide-react";
 import { Link } from "wouter";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-  "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-  "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080"
+  "/images/hero/1.jpg",
+  "/images/hero/2.jpg",
+  "/images/hero/3.jpg",
 ];
 
 export default function Hero() {
@@ -61,7 +61,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          소형견 전문 케어 센터에서 특별한 하루를 시작하세요
+          반려견 전문 케어 센터에서 특별한 하루를 시작하세요
         </motion.p>
         
         <motion.div 
@@ -85,7 +85,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             onClick={scrollToServices}
           >
-            🐾 프로그램 보기
+            🐾 서비스 보기
           </motion.button>
         </motion.div>
       </div>

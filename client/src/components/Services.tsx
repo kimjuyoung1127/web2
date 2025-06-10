@@ -5,59 +5,67 @@ import { Link } from "wouter";
 const services = [
   {
     icon: GraduationCap,
-    title: "켄넬 교육",
+    title: "퍼피빌 유치원",
     description: "올바른 생활 습관과 사회화 교육",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-soft-mint"
+    image: "/images/Services/training.jpg",
+    color: "bg-soft-mint",
+    id: "Kindergarten" // ID 유지
   },
   {
     icon: Zap,
     title: "피트니스",
     description: "건강한 체력 관리와 운동 프로그램",
     image: "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-warm-orange"
+    color: "bg-warm-orange",
+    id: "fitness"
   },
   {
     icon: Scissors,
     title: "미용 & 목욕",
     description: "전문 미용사의 섬세한 케어",
     image: "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-warm-orange"
+    color: "bg-warm-orange",
+    id: "grooming"
   },
   {
     icon: Bed,
-    title: "호텔 & 데이케어",
+    title: "호텔",
     description: "안전하고 편안한 숙박 서비스",
     image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-soft-mint"
+    color: "bg-soft-mint",
+    id: "hotel"
   },
   {
     icon: Clock,
     title: "데이케어",
     description: "종일 안심하고 맡길 수 있는 돌봄",
     image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-warm-orange"
+    color: "bg-warm-orange",
+    id: "daycare" // ID가 "daycare"인지 확인
   },
   {
     icon: Coffee,
     title: "카페",
     description: "반려견과 함께 즐기는 편안한 공간",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-soft-mint"
+    color: "bg-soft-mint",
+    id: "cafe"
   },
   {
     icon: Users,
-    title: "독피트니스 클래스",
-    description: "그룹별 맞춤 트레이닝 프로그램",
+    title: "맞춤 클래스",
+    description: "맞춤 트레이닝 프로그램",
     image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-warm-orange"
+    color: "bg-warm-orange",
+    id: "customTraining"
   },
   {
     icon: Heart,
-    title: "사회화 훈련",
-    description: "다른 강아지들과의 건강한 관계 형성",
+    title: "이벤트",
+    description: "생일파티 & 기념일 대관",
     image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    color: "bg-soft-mint"
+    color: "bg-soft-mint",
+    id: "EventRental"
   }
 ];
 
@@ -111,7 +119,17 @@ export default function Services() {
                       <div className="p-6 text-white w-full">
                         <h3 className="font-playfair text-xl font-bold mb-2">{service.title}</h3>
                         <p className="text-sm mb-4">{service.description}</p>
-                        <Link href="/consultation">
+                        <Link href={ // Modified Link href
+                          service.id === 'fitness' ? '/fitness' :
+                          service.id === 'Kindergarten' ? '/Kindergarten' :
+                          service.id === 'cafe' ? '/cafe' : 
+                          service.id === 'grooming'? '/grooming' : 
+                          service.id === 'hotel'? '/hotel' :
+                          service.id === 'daycare'? '/daycare' : // 이 부분이 "/daycare"로 연결되는지 확인
+                          service.id === 'customTraining'? '/customTraining' :
+                          service.id === 'EventRental'? '/EventRental' :
+                          `/${service.id}-detail?service=${service.id}` 
+                        }> 
                           <button className="bg-warm-orange px-4 py-2 rounded-full text-sm hover:bg-opacity-90 transition-all">
                             자세히 보기
                           </button>

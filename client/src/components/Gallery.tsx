@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/images/face.jpg",
     alt: "강아지들이 함께 노는 모습",
     height: "h-64"
   },

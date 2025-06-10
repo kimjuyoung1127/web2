@@ -1,43 +1,44 @@
 import { motion } from "framer-motion";
 import { Heart, Zap, Shield, Award, Star } from "lucide-react";
 
+
 const features = [
   {
     icon: Heart,
-    title: "무리 없는 사회화",
-    description: "소형견의 특성을 고려한 단계별 사회화 프로그램으로 스트레스 없는 교육을 제공합니다."
+    title: "사회화 교육",
+    description: "반려견의 특성을 고려한 단계별 사회화 프로그램으로 스트레스를 최소화한 교육을 제공합니다."
   },
   {
     icon: Zap,
-    title: "전문 피트니스",
-    description: "소형견에 맞는 운동 강도와 프로그램으로 건강한 체력 관리를 도와드립니다."
+    title: "전문 독 피트니스",
+    description: "반려견에 맞는 운동 강도와 프로그램으로 건강한 체력 관리를 도와드립니다."
   },
   {
     icon: Shield,
     title: "안전 관리 시스템",
-    description: "24시간 CCTV 모니터링과 전문 수의사 협진 시스템으로 안전을 보장합니다."
+    description: "200평 대의 넓은 공간을 통해 충분한 활동량을 보장하고 안전하게 관리해드립니다"
   }
 ];
 
 const staff = [
   {
-    name: "김미용 원장",
-    position: "수석 미용사",
-    experience: "15년 경력",
-    description: "15년 경력의 전문 미용사로 견종별 특성을 고려한 맞춤 미용 서비스를 제공합니다.",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    name: "김주영 트레이너",
+    position: "훈련 실장",
+    experience: "10년 경력",
+    description: "10년 경력의 전문 트레이너로 견종별 특성을 고려한 맞춤 트레이닝 서비스를 제공합니다.",
+    image: "/images/about/trainer.jpg",
     credentials: [
-      "반려동물 미용 자격증 보유",
-      "스트레스 프리 미용 전문",
-      "소형견 미용 1000+ 케이스 경험"
+      "국제 독피트니스 자격증 보유",
+      "방문교육 3천회 이상",
+      "전 돌고래 트레이너"
     ]
   },
   {
-    name: "박훈련 코치",
-    position: "수석 트레이너",
+    name: "",
+    position: "미용 실장",
     experience: "12년 경력",
     description: "동물행동학 전공으로 과학적인 접근을 통한 효과적인 훈련 프로그램을 진행합니다.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    image: "",
     credentials: [
       "동물행동학 석사 학위",
       "반려동물 행동교정 전문가",
@@ -45,15 +46,15 @@ const staff = [
     ]
   },
   {
-    name: "이건강 수의사",
-    position: "협진 수의사",
-    experience: "10년 경력",
-    description: "소형견 전문 수의사로 건강 상태 체크와 응급 상황 대응을 담당합니다.",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    name: "위시쌤",
+    position: "애견 미용사",
+    experience: "미용 보조",
+    description: "꼼꼼하게 목욕/위생, 깔끔한 라인정리와 부목얼까지 책임져 드립니다!",
+    image: "/images/about/wish.jpg",
     credentials: [
-      "수의사 면허 보유",
-      "소형견 전문 진료",
-      "응급의료 인증"
+      "애견 협회 반려견 스타일리스트 2급",
+      
+      
     ]
   }
 ];
@@ -73,7 +74,7 @@ export default function About() {
             퍼피빌만의 <span className="text-warm-orange">특별함</span>
           </h2>
           <p className="text-xl text-medium-gray max-w-2xl mx-auto">
-            소형견 전문 케어 센터로서 차별화된 서비스를 제공합니다
+            반려견 전문 케어 센터로서 차별화된 서비스를 제공합니다
           </p>
         </motion.div>
 
@@ -86,7 +87,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+              src="" 
               alt="퍼피빌 시설" 
               className="rounded-2xl shadow-xl"
             />

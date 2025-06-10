@@ -10,8 +10,8 @@ const pricingPlans = [
     period: "원/월",
     features: [
       "주 2회 유치원 이용",
-      "기본 사회화 교육",
-      "건강 체크 서비스",
+      "맞춤 프로그램",
+      "맞춤 교육",
       "일일 활동 리포트"
     ],
     buttonColor: "bg-soft-mint",
@@ -20,13 +20,13 @@ const pricingPlans = [
   {
     title: "데이케어 종일권",
     subtitle: "하루 종일 전문 케어",
-    price: "280,000",
-    period: "원/월",
+    price: "30,000",
+    period: "일",
     features: [
       "하루 종일 케어 서비스",
-      "전문 피트니스 프로그램",
-      "개별 맞춤 교육",
-      "픽업 & 드롭 서비스"
+      "자율 산책",
+      "기본 사회화 교육",
+      "일일 활동 리포트"
     ],
     buttonColor: "bg-warm-orange",
     popular: true
@@ -34,8 +34,8 @@ const pricingPlans = [
   {
     title: "미용 & 목욕",
     subtitle: "전문 미용사 케어",
-    price: "80,000",
-    period: "원~",
+    price: "상담 후 결정",
+    period: "",
     features: [
       "견종별 맞춤 미용",
       "프리미엄 샴푸 사용",
