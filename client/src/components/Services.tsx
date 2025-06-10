@@ -15,7 +15,7 @@ const services = [
     icon: Zap,
     title: "피트니스",
     description: "건강한 체력 관리와 운동 프로그램",
-    image: "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "/images/Services/fitness1.jpg",
     color: "bg-warm-orange",
     id: "fitness"
   },
@@ -23,7 +23,7 @@ const services = [
     icon: Scissors,
     title: "미용 & 목욕",
     description: "전문 미용사의 섬세한 케어",
-    image: "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "/images/Services/grooming.jpg",
     color: "bg-warm-orange",
     id: "grooming"
   },
@@ -31,7 +31,7 @@ const services = [
     icon: Bed,
     title: "호텔",
     description: "안전하고 편안한 숙박 서비스",
-    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "/images/Services/hotel.jpg",
     color: "bg-soft-mint",
     id: "hotel"
   },
@@ -47,7 +47,7 @@ const services = [
     icon: Coffee,
     title: "카페",
     description: "반려견과 함께 즐기는 편안한 공간",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "/images/Services/cafe.jpg",
     color: "bg-soft-mint",
     id: "cafe"
   },
@@ -55,15 +55,15 @@ const services = [
     icon: Users,
     title: "맞춤 클래스",
     description: "맞춤 트레이닝 프로그램",
-    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "/images/Services/customtraining.jpg",
     color: "bg-warm-orange",
-    id: "customTraining"
+    id: "customtraining"
   },
   {
     icon: Heart,
     title: "이벤트",
     description: "생일파티 & 기념일 대관",
-    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    image: "/images/Services/eventrental.jpg",
     color: "bg-soft-mint",
     id: "EventRental"
   }
@@ -126,7 +126,7 @@ export default function Services() {
                           service.id === 'grooming'? '/grooming' : 
                           service.id === 'hotel'? '/hotel' :
                           service.id === 'daycare'? '/daycare' : // 이 부분이 "/daycare"로 연결되는지 확인
-                          service.id === 'customTraining'? '/customTraining' :
+                          service.id === 'customtraining'? '/customtraining' :
                           service.id === 'EventRental'? '/EventRental' :
                           `/${service.id}-detail?service=${service.id}` 
                         }> 

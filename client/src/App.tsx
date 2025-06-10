@@ -12,6 +12,7 @@ import CafeDetail from "./pages/cafe"; // cafe.tsx import 추가
 import GroomingDetail from "./pages/grooming"; // grooming.tsx import 추가
 import HotelDetail from "./pages/hotel"; // hotel.tsx import 추가
 import DaycareDetail from "./pages/daycare"; // daycare.tsx import 추가
+import CustomTraining from "./pages/customtraining";
 
 
 function Router() {
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/grooming" component={GroomingDetail} />
       <Route path="/hotel" component={HotelDetail} />
       <Route path="/daycare" component={DaycareDetail} /> {/* 이 부분이 정확한지 확인 */}
+      <Route path="/customtraining" component={CustomTraining} />
       <Route component={NotFound} />
     </Switch>
   );
