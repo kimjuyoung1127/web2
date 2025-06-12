@@ -2,46 +2,152 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
+
 const galleryImages = [
   {
-    src: "/images/face.jpg",
-    alt: "강아지들이 함께 노는 모습",
-    height: "h-64"
+    src: "/images/gallery/1.jpg",
+    alt: "강아지들이 함께 노는 모습갤러리 이미지 1", // alt 속성에 의미있는 설명을 추가하는 것이 좋습니다.
+    // height: "h-64" // height 속성 제거
   },
   {
-    src: "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600",
-    alt: "전문 미용 서비스",
-    height: "h-80"
+    src: "/images/gallery/2.jpg",
+    alt: "갤러리 이미지 2",
+    // height: "h-80" // height 속성 제거
   },
   {
-    src: "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500",
-    alt: "피트니스 운동 중인 강아지",
-    height: "h-72"
+    src: "/images/gallery/3.jpg",
+    alt: "갤러리 이미지 3",
+    // height: "h-72" // height 속성 제거
   },
   {
-    src: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=450",
-    alt: "편안한 호텔 룸",
+    src: "/images/gallery/4.jpg",
+    alt: "",
     height: "h-68"
   },
   {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    alt: "훈련 중인 강아지",
+    src: "/images/gallery/5.jpg",
+    alt: "",
     height: "h-64"
   },
   {
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500",
-    alt: "모던한 펫카페 인테리어",
+    src: "/images/gallery/6.jpg",
+    alt: "",
     height: "h-72"
   },
   {
-    src: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=350",
-    alt: "사회화 시간",
+    src: "/images/gallery/7.jpg",
+    alt: "",
     height: "h-60"
   },
   {
-    src: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    alt: "건강한 강아지",
+    src: "/images/gallery/8.jpg",
+    alt: "",
     height: "h-64"
+  },
+  {
+    src: "/images/gallery/9.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/10.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/11.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/12.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/13.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/14.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/15.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/16.jpg",
+    alt: "",
+    height: "h-64"    
+  },
+  {
+    src: "/images/gallery/17.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/18.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/19.jpg",
+    alt: "",
+    height: "h-64"
+  },  
+  {
+    src: "/images/gallery/20.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/21.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/22.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/23.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/24.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/25.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/26.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/27.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/28.jpg",
+    alt: "",
+    height: "h-64"
+  },
+  {
+    src: "/images/gallery/29.jpg",
+    alt: "",
+    // height: "h-64" // height 속성 제거
   }
 ];
 
@@ -79,7 +185,7 @@ export default function Gallery() {
               <motion.img
                 src={image.src}
                 alt={image.alt}
-                className={`w-full ${image.height} object-cover rounded-2xl shadow-lg cursor-pointer`}
+                className={`w-full object-cover rounded-2xl shadow-lg cursor-pointer`} // image.height 클래스 제거
                 whileHover={{ scale: 1.02, shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setSelectedImage(image.src)}
