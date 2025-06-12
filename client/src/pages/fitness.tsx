@@ -38,7 +38,7 @@ const serviceData: ServiceData = {
     title: "독 피트니스",
     subtitle: "건강한 체력 관리와 두뇌강화 운동 프로그램",
     description: "강아지에 특화된 전문 피트니스 프로그램으로 우리 아이의 건강한 체중 관리와 근력 강화를 도와드립니다. 재미있는 운동을 통해 스트레스도 해소하고 활력 넘치는 일상을 만들어보세요.",
-    mainVideo: "0gHaYKnLxUA", // Dog fitness/exercise video
+    mainVideo: "QzsfkZJ_qeU", // Dog fitness/exercise video
     features: [
       "반려견 맞춤 운동 강도",
       "전문 피트니스 트레이너",
@@ -53,43 +53,44 @@ const serviceData: ServiceData = {
     ],
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        src: "2H7lrnEb82Y",
         alt: "피트니스 운동 중인 강아지",
-        type: "image"
+        type: "video"
       },
       {
-        src: "Zm9WKE6qJNY", // Dog agility training
+        src: "Qgb9SBg8Plo", // Dog agility training
         alt: "전문 피트니스 프로그램",
         type: "video"
       },
       {
-        src: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        alt: "건강한 강아지",
-        type: "image"
+        src: "lzVvoOoz0K4",
+        alt: "",
+        type: "video"
       },
       {
-        src: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        alt: "운동 후 만족스러운 표정",
-        type: "image"
+        src: "HFTtC1Nrxbk",
+        alt: "",
+        type: "video"
       }
     ],
     testimonials: [
       {
-        name: "바둑이 아빠",
-        petName: "바둑이",
-        comment: "3개월 피트니스 프로그램으로 바둑이가 건강한 체중을 되찾았어요. 활력도 넘치고 정말 만족스럽습니다.",
+        name: "뚜비 보호자님",
+        petName: "뚜비",
+        comment: "피트니스 프로그램으로 겁 많던 아이가 자신감이 생겼어요!. 너무 감사합니다~!.",
         rating: 5
       }
     ],
     pricing: {
-      title: "피트니스 프로그램",
-      price: "220,000",
+      title: "독 피트니스 프로그램 ",
+      price: "0 ",
       period: "원/월",
       includes: [
-        "주 3회 피트니스 세션",
+        "유치원 등록 시 무료",
         "개별 운동 계획 수립",
         "건강 상태 체크",
-        "영양 상담 서비스"
+        "체형 교정, 근육 강화",
+        "수술 후 재활"
       ]
     }
   },

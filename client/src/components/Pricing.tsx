@@ -80,7 +80,7 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-dark-gray text-white px-6 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-dark-gray text-dark-gray px-6 py-2 rounded-full text-sm font-semibold">
                     POPULAR
                   </span>
                 </div>

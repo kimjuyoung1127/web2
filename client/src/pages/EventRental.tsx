@@ -96,6 +96,16 @@ const EventRental: React.FC = () => {
         </motion.div>
       </section>
 
+      {/* 홈으로 돌아가기 버튼 추가 */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <Link to="/"> 
+          <button className="flex items-center text-sm text-dark-gray hover:text-warm-orange-500 transition-colors font-semibold">
+            <ChevronLeft className="w-5 h-5 mr-1" /> 
+            홈으로 돌아가기 
+          </button> 
+        </Link>
+      </div>
+
       {/* Space Gallery Section */}
       <section id="space-gallery" className="py-16 md:py-24 bg-sky-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -269,6 +279,7 @@ const EventRental: React.FC = () => {
             >
               상담 신청하기
             </Link>
+            
           </motion.div>
         </div>
       </section>
@@ -302,10 +313,13 @@ const EventRental: React.FC = () => {
               >
                 <X size={24} />
               </button>
+              
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      
 
       {/* Optional: Floating CTA Button */}
       {/* 

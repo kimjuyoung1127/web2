@@ -92,23 +92,35 @@ const serviceData: DaycareServiceData = {
       description: '다른 강아지와의 자연스러운 만남',
       icon: '🧠',
     },
+    {
+      name: '하루 종일 놀기',
+      description: '하루 종일 놀기',
+      icon: '🥰',
+    },
+    {
+      name: '두뇌 발달',
+      description: '후각 마음껏 사용하기',
+      icon: '🤔',
+    }
   ],
   gallery: [
     // public/images/daycare/ 폴더에 실제 이미지 파일 이름을 넣어주세요.
-    { src: '/images/daycare/gallery_1.jpg', caption: '간식 탐색 활동 중' },
-    { src: '/images/daycare/gallery_2.jpg', caption: '쿠션 위에서 낮잠' },
-    { src: '/images/daycare/gallery_3.jpg', caption: '친구들과 신나게 뛰어놀아요' },
-    { src: '/images/daycare/gallery_4.jpg', caption: '안전한 실내 놀이 공간' },
+    { src: '/images/daycare/1.jpg', caption: '하루 종일 놀기' },
+    { src: '/images/daycare/2.jpg', caption: '하루 종일 놀기' },
+    { src: '/images/daycare/3.jpg', caption: '친구들과 신나게 뛰어놀아요' },
+    { src: '/images/daycare/4.jpg', caption: '안전한 실내 놀이 공간' },
+    { src: '/images/daycare/5.jpg', caption: '하루 종일 놀기' },
+    { src: '/images/daycare/6.jpg', caption: '하루 종일 놀기' },
   ],
   testimonials: [
     {
-      quote: '짧게 맡긴다는 게 걱정됐는데 너무 잘 놀고 왔어요.',
-      author: '행복이 견주',
+      quote: '병원갈 일이 생겨서 맡겼는데, 예쁜 사진도 계속 찍어서 연락주시고 넘 안심됐습니다! 올때마다 또 맡기려고 합니다. 너무 만족스러워요, 감사드립니다!☺️🙂☺️',
+      author: '행복이 보호자님',
       rating: 5,
     },
     {
-      quote: '종일 프로그램이 다양해서 아이가 지루해하지 않아요',
-      author: '사랑이 견주',
+      quote: '카페로 갔다가 강아지가 좋아해서 멀지만 데이케어보낼일있을때 다녀왔어요!! 잘놀고온거같아서 만족해요!',
+      author: '애플이 보호자님',
       rating: 5,
     },
   ],

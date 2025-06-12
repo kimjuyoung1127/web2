@@ -61,8 +61,8 @@ const services = [
   },
   {
     icon: Heart,
-    title: "이벤트",
-    description: "생일파티 & 기념일 대관",
+    title: "놀이방",
+    description: "퍼피빌 시설 소개 및 놀이방",
     image: "/images/Services/eventrental.jpg",
     color: "bg-soft-mint",
     id: "EventRental"
