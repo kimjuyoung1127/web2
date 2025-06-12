@@ -344,9 +344,7 @@ export default function CafeDetail() {
                     <span className="text-2xl font-bold text-warm-orange">
                       {item.price}
                     </span>
-                    <button className="bg-soft-mint text-white px-4 py-2 rounded-full text-sm hover:bg-opacity-90 transition-all">
-                      주문하기
-                    </button>
+                  
                   </div>
                 </div>
               </motion.div>

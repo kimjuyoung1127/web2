@@ -6,14 +6,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import Consultation from "@/pages/consultation";
 import NotFound from "@/pages/not-found";
-import FitnessPage from './pages/fitness'; // 기존 피트니스 페이지
+import FitnessPage from './pages/fitness'; 
 import Kindergarten from './pages/Kindergarten';
-import CafeDetail from "./pages/cafe"; // cafe.tsx import 추가
-import GroomingDetail from "./pages/grooming"; // grooming.tsx import 추가
-import HotelDetail from "./pages/hotel"; // hotel.tsx import 추가
-import DaycareDetail from "./pages/daycare"; // daycare.tsx import 추가
+import CafeDetail from "./pages/cafe"; 
+import GroomingDetail from "./pages/grooming"; 
+import HotelDetail from "./pages/hotel"; 
+import DaycareDetail from "./pages/daycare"; 
 import CustomTraining from "./pages/customtraining";
-
+import EventDetail from "./pages/EventRental";
+import EventRental from "./pages/EventRental";
 
 function Router() {
   return (
@@ -25,8 +26,11 @@ function Router() {
       <Route path="/cafe" component={CafeDetail} /> 
       <Route path="/grooming" component={GroomingDetail} />
       <Route path="/hotel" component={HotelDetail} />
-      <Route path="/daycare" component={DaycareDetail} /> {/* 이 부분이 정확한지 확인 */}
+      <Route path="/daycare" component={DaycareDetail} />
       <Route path="/customtraining" component={CustomTraining} />
+      <Route path="/EventRental" component={EventRental} />
+
+      {/* Location info modal */}
       <Route component={NotFound} />
     </Switch>
   );

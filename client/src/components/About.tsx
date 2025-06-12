@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Heart, Zap, Shield, Award, Star } from "lucide-react";
+import { Heart, Zap, Shield, Star } from "lucide-react"; // Award 아이콘은 사용되지 않아 제거했습니다.
+import { useState, useEffect } from "react"; // useState와 useEffect를 추가합니다.
 
 
 const features = [
@@ -28,10 +29,15 @@ const staff = [
     description: "10년 경력의 전문 트레이너로 견종별 특성을 고려한 맞춤 트레이닝 서비스를 제공합니다.",
     image: "/images/about/trainer.jpg",
     credentials: [
-      "국제 독피트니스 자격증 보유",
-      "방문교육 3천회 이상",
+      "North Carolina State University",
+      "CSCC Dog Fitness Coach 자격",
+      "방문 트레이닝, 방문 교육 PT 4천회 이상",
+      "Fear Free Certified Trainer",
+      "IDFA Canine Fitness Coach Level2",
       "전 돌고래 트레이너"
     ]
+
+    
   },
   {
     name: "",
@@ -53,13 +59,33 @@ const staff = [
     image: "/images/about/wish.jpg",
     credentials: [
       "애견 협회 반려견 스타일리스트 2급",
-      
-      
     ]
   }
 ];
 
+// Features 섹션에 사용할 이미지 배열
+const featureImages = [
+  "/images/about/facility_1.jpg", // 추가 이미지 예시 1
+  "/images/about/facility_2.jpg", // 추가 이미지 예시 2
+  "/images/about/facility_3.jpg",
+  "/images/about/facility_4.jpg",
+  "/images/about/facility_5.jpg",
+  "/images/about/facility_6.jpg",
+  "/images/about/facility_7.jpg",
+  "/images/about/facility_8.jpg",
+];
+
 export default function About() {
+  const [currentFeatureImageIndex, setCurrentFeatureImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeatureImageIndex((prev) => (prev + 1) % featureImages.length);
+    }, 5000); // 5초마다 이미지 변경
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,16 +107,22 @@ export default function About() {
         {/* Features Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <motion.div
+            className="relative w-full h-80 md:h-96 rounded-2xl shadow-xl overflow-hidden" // 이미지 컨테이너 스타일
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <img 
-              src="" 
-              alt="퍼피빌 시설" 
-              className="rounded-2xl shadow-xl"
-            />
+            {featureImages.map((image, index) => (
+              <motion.div
+                key={index}
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${image})` }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: index === currentFeatureImageIndex ? 1 : 0 }}
+                transition={{ duration: 1 }} // 이미지 전환 속도
+              />
+            ))}
           </motion.div>
           
           <motion.div
@@ -100,7 +132,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h3 className="font-playfair text-3xl font-bold text-dark-gray mb-6">
-              <span className="text-warm-orange">소형견 전문</span> 케어 시스템
+              <span className="text-warm-orange">반려견</span> 케어 시스템
             </h3>
             <div className="space-y-6">
               {features.map((feature, index) => {
